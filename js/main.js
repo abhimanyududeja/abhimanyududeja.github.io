@@ -80,7 +80,7 @@ function initHeaderScroll() {
  * Initialize smooth scroll for anchor links
  */
 function initSmoothScroll() {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  const anchorLinks = document.querySelectorAll("a[href^=\"#\"]");
 
   anchorLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -164,4 +164,9 @@ if (document.readyState === "loading") {
 }
 
 // Export functions for potential use in other modules
-export { initMobileNav, initHeaderScroll, initSmoothScroll, initScrollAnimations };
+export {
+  initMobileNav,
+  initHeaderScroll,
+  initSmoothScroll,
+  initScrollAnimations,
+};

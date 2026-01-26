@@ -251,11 +251,7 @@
 }
 
 .highlight-section .section-title::after {
-  background: linear-gradient(
-    90deg,
-    var(--color-primary),
-    var(--color-accent)
-  );
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
 }
 
 .research-card {

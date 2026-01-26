@@ -21,6 +21,7 @@ Spring 2025
 ## Project Objective
 
 Create a personal homepage using vanilla HTML5, CSS3, and ES6+ JavaScript that:
+
 - Showcases my professional profile, skills, and projects
 - Demonstrates proficiency in modern web development practices
 - Follows accessibility and W3C compliance standards
@@ -34,16 +35,19 @@ Create a personal homepage using vanilla HTML5, CSS3, and ES6+ JavaScript that:
 ## Features
 
 ### Pages
+
 1. **Homepage (index.html)** - Hero section with typing animation, skills overview, and research highlight
 2. **Projects (projects.html)** - Filterable project gallery with interactive cards
 3. **My Journey (journey.html)** - AI-generated interactive timeline of my career path
 
 ### Original Components
+
 - **Typing Animation**: Custom TypeWriter class (~100 lines) that creates a typewriter effect cycling through different roles. 100% original JavaScript, not from any library.
 - **Project Filter**: Interactive category-based project filtering
 - **Timeline Animator**: Scroll-triggered animations for timeline items
 
 ### Technical Features
+
 - ES6 modules with `type="module"`
 - CSS custom properties (variables)
 - Flexbox and CSS Grid layouts
@@ -84,23 +88,27 @@ abhimanyu-portfolio/
 ## Instructions to Build
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm (comes with Node.js)
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/abhimanyududeja/abhimanyududeja.github.io.git
 cd abhimanyududeja.github.io
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the local development server:
+
 ```bash
 npm start
 ```
@@ -109,24 +117,26 @@ npm start
 
 ### Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm start` | Start local development server |
-| `npm run lint` | Run ESLint on JavaScript files |
-| `npm run lint:fix` | Fix ESLint errors automatically |
-| `npm run format` | Format all files with Prettier |
+| Command                | Description                             |
+| ---------------------- | --------------------------------------- |
+| `npm start`            | Start local development server          |
+| `npm run lint`         | Run ESLint on JavaScript files          |
+| `npm run lint:fix`     | Fix ESLint errors automatically         |
+| `npm run format`       | Format all files with Prettier          |
 | `npm run format:check` | Check formatting without changing files |
-| `npm run validate` | Validate HTML files |
+| `npm run validate`     | Validate HTML files                     |
 
 ### Deployment to GitHub Pages
 
 1. Create a repository named `username.github.io` on GitHub
 2. Push your code:
+
 ```bash
 git add .
 git commit -m "Initial portfolio commit"
 git push origin main
 ```
+
 3. Enable GitHub Pages in repository settings
 4. Your site will be live at `https://username.github.io`
 
@@ -159,14 +169,17 @@ git push origin main
 This project was developed with assistance from Claude AI (Anthropic).
 
 ### AI-Generated Content:
+
 - **Journey Page (journey.html)**: The timeline content, narrative descriptions, and structure were generated with AI assistance based on personal information provided.
 
 ### How AI was used:
+
 1. **Code Generation**: Claude helped generate the initial HTML structure, CSS styles, and JavaScript modules based on project requirements.
 2. **Documentation**: This README and the design document were created with AI assistance.
 3. **Code Review**: Claude provided suggestions for improving code quality and accessibility.
 
 ### Human Contributions:
+
 - Project concept and design direction
 - Personal content and information
 - Profile photography

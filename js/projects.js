@@ -122,7 +122,7 @@ function initProjectsPage() {
 
   // Add click event to each filter button
   filterButtons.forEach((button) => {
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
       const filter = this.dataset.filter;
 
       // Update active button state
@@ -186,7 +186,7 @@ function initProjectHoverEffects() {
 }
 
 // Initialize when DOM is ready
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   initProjectsPage();
 });
 

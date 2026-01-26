@@ -56,7 +56,10 @@ class TypeWriter {
     if (this.isDeleting) {
       // Deleting characters
       this.currentCharIndex--;
-      this.element.textContent = currentWord.substring(0, this.currentCharIndex);
+      this.element.textContent = currentWord.substring(
+        0,
+        this.currentCharIndex
+      );
 
       // Check if word is fully deleted
       if (this.currentCharIndex === 0) {
@@ -68,7 +71,10 @@ class TypeWriter {
     } else {
       // Typing characters
       this.currentCharIndex++;
-      this.element.textContent = currentWord.substring(0, this.currentCharIndex);
+      this.element.textContent = currentWord.substring(
+        0,
+        this.currentCharIndex
+      );
 
       // Check if word is fully typed
       if (this.currentCharIndex === currentWord.length) {

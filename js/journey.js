@@ -2,7 +2,7 @@
  * Journey Page Module
  * Handles timeline animations and interactive elements
  * @author Abhimanyu Dudeja
- * 
+ *
  * This page content was generated with assistance from Claude AI (Anthropic)
  */
 
