@@ -1,195 +1,100 @@
-# Abhimanyu Dudeja - Personal Portfolio Website
+# Abhimanyu Dudeja - Portfolio Website
 
-A responsive personal portfolio website built with vanilla HTML5, CSS3, and ES6+ JavaScript modules.
+My personal portfolio website for CS5610 Web Development course.
 
-![Portfolio Screenshot](./images/screenshot.png)
+![Screenshot](./images/screenshot.png)
 
 ## Author
 
 **Abhimanyu Dudeja**  
-MS Computer Science Student  
-Northeastern University, Khoury College of Computer Sciences  
-📧 dudeja.ab@northeastern.edu  
-🔗 [LinkedIn](https://www.linkedin.com/in/abhimanyududeja/) | [GitHub](https://github.com/abhimanyududeja)
+MS Computer Science, Northeastern University  
+Email: dudeja.ab@northeastern.edu  
+[LinkedIn](https://www.linkedin.com/in/abhimanyududeja/) | [GitHub](https://github.com/abhimanyududeja)
 
-## Class Link
+## Class
 
 CS5610 - Web Development  
-Northeastern University  
+Northeastern University, Khoury College  
 Spring 2025
 
 ## Project Objective
 
-Create a personal homepage using vanilla HTML5, CSS3, and ES6+ JavaScript that:
-
-- Showcases my professional profile, skills, and projects
-- Demonstrates proficiency in modern web development practices
-- Follows accessibility and W3C compliance standards
-- Includes original JavaScript functionality and creative components
-- Is deployed as a static website on GitHub Pages
+Build a personal homepage using vanilla HTML, CSS, and JavaScript (no frameworks or libraries). The site should showcase my background, projects, and skills while meeting all the assignment requirements.
 
 ## Live Demo
 
-🌐 [View Live Site](https://abhimanyududeja.github.io)
+https://abhimanyududeja.github.io
 
-## Features
+## Pages
 
-### Pages
+1. **Home** - Introduction with a typing animation effect, my skills, and research highlights
+2. **Projects** - My ML and data engineering projects with filter functionality  
+3. **My Journey** - Timeline showing my path from Delhi to Boston (AI-generated content)
 
-1. **Homepage (index.html)** - Hero section with typing animation, skills overview, and research highlight
-2. **Projects (projects.html)** - Filterable project gallery with interactive cards
-3. **My Journey (journey.html)** - AI-generated interactive timeline of my career path
+## How to Run
 
-### Original Components
+```bash
+# Clone the repo
+git clone https://github.com/abhimanyududeja/abhimanyududeja.github.io.git
 
-- **Typing Animation**: Custom TypeWriter class (~100 lines) that creates a typewriter effect cycling through different roles. 100% original JavaScript, not from any library.
-- **Project Filter**: Interactive category-based project filtering
-- **Timeline Animator**: Scroll-triggered animations for timeline items
+# Go to folder
+cd abhimanyududeja.github.io
 
-### Technical Features
+# Install dependencies
+npm install
 
-- ES6 modules with `type="module"`
-- CSS custom properties (variables)
-- Flexbox and CSS Grid layouts
-- Intersection Observer API for scroll animations
-- Semantic HTML5 structure
-- Responsive design for all screen sizes
+# Format code
+npm run format
+
+# Check for lint errors
+npm run lint
+
+# Start local server
+npm start
+```
+
+Then open http://localhost:3000 in your browser.
 
 ## Project Structure
 
 ```
-abhimanyu-portfolio/
-├── index.html              # Homepage
-├── projects.html           # Projects page
-├── journey.html            # AI-generated journey page
-├── css/
-│   ├── main.css           # Shared styles and variables
-│   ├── home.css           # Homepage-specific styles
-│   ├── projects.css       # Projects page styles
-│   └── journey.css        # Journey page styles
-├── js/
-│   ├── main.js            # Shared functionality
-│   ├── typing.js          # Typing animation module
-│   ├── projects.js        # Project filtering module
-│   └── journey.js         # Timeline animation module
-├── images/
-│   ├── profile.png        # Profile photo
-│   └── favicon.png        # Site favicon
-├── docs/
-│   ├── design-document.md  # Design documentation
-│   └── Abhimanyu_Dudeja_Resume.pdf # Resume
-├── package.json           # Project configuration
-├── .eslintrc.json         # ESLint configuration
-├── .prettierrc            # Prettier configuration
-├── LICENSE                # MIT License
-└── README.md              # This file
+├── index.html          # Homepage
+├── projects.html       # Projects page
+├── journey.html        # Journey/timeline page
+├── css/                # Stylesheets
+├── js/                 # JavaScript modules
+├── images/             # Images and favicon
+├── docs/               # Design document and resume
+├── package.json        # Dependencies
+└── README.md
 ```
 
-## Instructions to Build
+## Technologies
 
-### Prerequisites
+- HTML5
+- CSS3 (Flexbox, Grid, CSS Variables)
+- JavaScript ES6+ (Modules, Classes)
+- ESLint & Prettier for code quality
 
-- Node.js (v18 or higher)
-- npm (comes with Node.js)
+## GenAI Disclosure
 
-### Installation
+I used Claude AI (Anthropic) to help with this project:
 
-1. Clone the repository:
+**What AI helped with:**
+- The Journey page content (timeline descriptions and structure)
+- Debugging some CSS issues
+- Getting started with the typing animation logic
 
-```bash
-git clone https://github.com/abhimanyududeja/abhimanyududeja.github.io.git
-cd abhimanyududeja.github.io
-```
+**What I did myself:**
+- Overall design decisions and layout
+- Writing and organizing the HTML structure
+- Styling and making it responsive
+- The project filtering functionality
+- Testing and deploying to GitHub Pages
+- All personal content and information
 
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Run the local development server:
-
-```bash
-npm start
-```
-
-4. Open your browser and navigate to `http://localhost:3000`
-
-### Available Scripts
-
-| Command                | Description                             |
-| ---------------------- | --------------------------------------- |
-| `npm start`            | Start local development server          |
-| `npm run lint`         | Run ESLint on JavaScript files          |
-| `npm run lint:fix`     | Fix ESLint errors automatically         |
-| `npm run format`       | Format all files with Prettier          |
-| `npm run format:check` | Check formatting without changing files |
-| `npm run validate`     | Validate HTML files                     |
-
-### Deployment to GitHub Pages
-
-1. Create a repository named `username.github.io` on GitHub
-2. Push your code:
-
-```bash
-git add .
-git commit -m "Initial portfolio commit"
-git push origin main
-```
-
-3. Enable GitHub Pages in repository settings
-4. Your site will be live at `https://username.github.io`
-
-## Technologies Used
-
-- **HTML5** - Semantic markup
-- **CSS3** - Custom properties, Flexbox, Grid, animations
-- **JavaScript ES6+** - Modules, classes, arrow functions, template literals
-- **Google Fonts** - Poppins, Playfair Display
-- **ESLint** - JavaScript linting
-- **Prettier** - Code formatting
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Accessibility
-
-- Semantic HTML elements
-- Alt text for all images
-- ARIA labels for interactive elements
-- Keyboard navigation support
-- Sufficient color contrast ratios
-
-## GenAI Usage Disclosure
-
-This project was developed with assistance from Claude AI (Anthropic).
-
-### AI-Generated Content:
-
-- **Journey Page (journey.html)**: The timeline content, narrative descriptions, and structure were generated with AI assistance based on personal information provided.
-
-### How AI was used:
-
-1. **Code Generation**: Claude helped generate the initial HTML structure, CSS styles, and JavaScript modules based on project requirements.
-2. **Documentation**: This README and the design document were created with AI assistance.
-3. **Code Review**: Claude provided suggestions for improving code quality and accessibility.
-
-### Human Contributions:
-
-- Project concept and design direction
-- Personal content and information
-- Profile photography
-- Final review and customization
-- Deployment and testing
+The AI-generated page is `journey.html` - there's a note on that page indicating it was made with AI assistance.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-© 2025 Abhimanyu Dudeja. All rights reserved.
+MIT License
