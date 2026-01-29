@@ -37,7 +37,7 @@ class TimelineAnimator {
     this.items.forEach((item) => {
       const isLeft = item.classList.contains("timeline-item-left");
       item.style.opacity = "0";
-      item.style.transform = isLeft ? "translateX(-50px)" : "translateX(50px)";
+      item.style.transform = isLeft ? "translateX(-50px)" : "translateX(50px)"; 
       item.style.transition = "opacity 0.6s ease, transform 0.6s ease";
     });
 
@@ -93,6 +93,11 @@ class TimelineAnimator {
 
   /**
    * Reset all animations
+
+At the top you run
+this.observer.unobserve(entry.target); 
+Which stops observing the item
+Then in the reset method below, it is tring to observe with the disconnected observer 
    */
   reset() {
     this.animatedItems.clear();
@@ -108,6 +113,20 @@ class TimelineAnimator {
 /**
  * Initialize fact cards hover animation
  */
+
+/**
+ * This function creates a new IntersectionObserver for EACH card instead of reusing one observer. It would be better to have one
+ observer for all cards. Something like this:
+ */
+
+ // Create ONE observer
+const observer = new IntersectionObserver(callback, options);
+
+// Observe ALL cards with same observer
+factCards.forEach((card) => {
+  observer.observe(card);
+});
+
 function initFactCards() {
   const factCards = document.querySelectorAll(".fact-card");
 
@@ -115,7 +134,19 @@ function initFactCards() {
     // Add staggered entrance animation
     card.style.opacity = "0";
     card.style.transform = "translateY(30px)";
-    card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+    card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`; //hard coded numbers should be constants or options
+
+    // At top of file you can add this 
+const ANIMATION_CONFIG = {
+  slideDistance: 50,
+  scaleStart: 0.5,
+  mapLineWidth: 150
+};
+
+// Then use to transform
+item.style.transform = `translateX(${ANIMATION_CONFIG.slideDistance}px)`;
+
+    //end of edit 
 
     // Create observer for entrance animation
     const observer = new IntersectionObserver(
