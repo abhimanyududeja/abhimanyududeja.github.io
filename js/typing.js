@@ -68,6 +68,32 @@ class TypeWriter {
       }
 
       setTimeout(this.type, this.deleteSpeed);
+      // with this if a user were to navigate away the time keeps running
+      // store the timeout ID's with this
+      constructor() {
+        this.timeoutId = null;
+      }
+
+      type() {
+        this.timeoutId = setTimeout(this.type, speed);
+      }
+
+      stop() {
+        if (this.timeoutId) {
+        clearTimeout(this.timeoutId);
+            }
+        }
+
+
+  
+      
+
+      //for animations it would be better to use this to sync with the browser for smoother animation
+
+      requestAnimationFrame(() => {
+      setTimeout(this.type, this.deleteSpeed);
+      });
+      
     } else {
       // Typing characters
       this.currentCharIndex++;
@@ -99,6 +125,8 @@ class TypeWriter {
   /**
    * Reset the animation to initial state
    */
+
+  // reset is not called anywhere in this code 
   reset() {
     this.currentWordIndex = 0;
     this.currentCharIndex = 0;
