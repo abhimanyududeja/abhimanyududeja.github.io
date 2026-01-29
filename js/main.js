@@ -30,11 +30,21 @@ function initMobileNav() {
   const navLinks = navMenu.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      navToggle.classList.remove("active");
+      navToggle.classList.remove("active"); //duplicate code 
       navMenu.classList.remove("active");
       document.body.style.overflow = "";
     });
   });
+
+  //Refactored Version
+  function closeMenu() {
+  navToggle.classList.remove("active");
+  navMenu.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// Then use: closeMenu()
+  
 
   // Close menu when clicking outside
   document.addEventListener("click", (event) => {
@@ -44,7 +54,7 @@ function initMobileNav() {
     if (!isClickInside && navMenu.classList.contains("active")) {
       navToggle.classList.remove("active");
       navMenu.classList.remove("active");
-      document.body.style.overflow = "";
+      document.body.style.overflow = ""; //for here too use closeMenu
     }
   });
 }
@@ -60,7 +70,7 @@ function initHeaderScroll() {
     return;
   }
 
-  let lastScrollY = window.scrollY;
+  // let lastScrollY = window.scrollY; // This is an unsed Variable
   const scrollThreshold = 50;
 
   window.addEventListener("scroll", () => {
