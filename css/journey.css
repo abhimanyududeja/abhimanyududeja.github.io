@@ -200,6 +200,17 @@
   margin-bottom: var(--space-3);
 }
 
+/* For the color values I would recommend using CSS variables instead of hardcoded values, overall this code is great and well 
+organized! There are good use of CSS variables in other areas. These variables could be added to main.css as well for consistency :)
+Heres an example
+
+.timeline-badge-education {
+  color: var(--color-education);
+  background-color: color-mix(in srgb, var(--color-education) 10%, transparent);
+}
+
+*/
+
 .timeline-badge-education {
   color: #4361ee;
   background-color: rgba(67, 97, 238, 0.1);
