@@ -8,6 +8,9 @@
  * ProjectFilter class for filtering project cards
  * @class
  */
+
+// Looking at this code it seems it does the same thing as the initProjectPage() function later in the page.
+// I would reccommend to remove initProjectPage() 
 class ProjectFilter {
   /**
    * Create a ProjectFilter instance
@@ -76,7 +79,9 @@ class ProjectFilter {
         card.style.display = "block";
         card.style.opacity = "0";
         card.style.transform = "translateY(20px)";
-
+    // Running the amount of projects you have simultaneously will cause peformance issues. Using CSS classes with transition delays/
+        .project-card { transition-delay: calc(var(--index) * 100ms); }
+        //end comment
         setTimeout(() => {
           card.style.transition = "opacity 0.4s ease, transform 0.4s ease";
           card.style.opacity = "1";
@@ -98,6 +103,8 @@ class ProjectFilter {
    * @param {string} category - Category to count
    * @returns {number} Count of projects
    */
+
+  //seems to be an unused function
   getProjectCount(category) {
     if (category === "all") {
       return this.projectCards.length;
@@ -112,51 +119,61 @@ class ProjectFilter {
 /**
  * Initialize projects page functionality
  */
+// function initProjectsPage() {
+//   const filterButtons = document.querySelectorAll(".filter-btn");
+//   const projectCards = document.querySelectorAll(".project-card");
+
+//   if (filterButtons.length === 0 || projectCards.length === 0) {
+//     return;
+//   }
+
+//   // Add click event to each filter button
+//   filterButtons.forEach((button) => {
+//     button.addEventListener("click", function () {
+//       const filter = this.dataset.filter;
+
+//       // Update active button state
+//       filterButtons.forEach((btn) => {
+//         btn.classList.remove("filter-btn-active");
+//       });
+//       this.classList.add("filter-btn-active");
+
+//       // Filter projects
+//       projectCards.forEach((card, index) => {
+//         const category = card.dataset.category;
+//         const shouldShow = filter === "all" || category === filter;
+
+//         if (shouldShow) {
+//           card.style.display = "block";
+//           card.style.opacity = "0";
+//           card.style.transform = "translateY(20px)";
+
+//           setTimeout(() => {
+//             card.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+//             card.style.opacity = "1";
+//             card.style.transform = "translateY(0)";
+//           }, index * 50);
+//         } else {
+//           card.style.opacity = "0";
+//           card.style.transform = "translateY(20px)";
+
+//           setTimeout(() => {
+//             card.style.display = "none";
+//           }, 300);
+//         }
+//       });
+//     });
+//   });
+
+/**
+ * Initialize projects page functionality
+ */
 function initProjectsPage() {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
+  // Use the ProjectFilter class instead of duplicating logic
+  const projectFilter = new ProjectFilter('.filter-btn', '.project-card');
+  projectFilter.init();
 
-  if (filterButtons.length === 0 || projectCards.length === 0) {
-    return;
-  }
 
-  // Add click event to each filter button
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const filter = this.dataset.filter;
-
-      // Update active button state
-      filterButtons.forEach((btn) => {
-        btn.classList.remove("filter-btn-active");
-      });
-      this.classList.add("filter-btn-active");
-
-      // Filter projects
-      projectCards.forEach((card, index) => {
-        const category = card.dataset.category;
-        const shouldShow = filter === "all" || category === filter;
-
-        if (shouldShow) {
-          card.style.display = "block";
-          card.style.opacity = "0";
-          card.style.transform = "translateY(20px)";
-
-          setTimeout(() => {
-            card.style.transition = "opacity 0.4s ease, transform 0.4s ease";
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-          }, index * 50);
-        } else {
-          card.style.opacity = "0";
-          card.style.transform = "translateY(20px)";
-
-          setTimeout(() => {
-            card.style.display = "none";
-          }, 300);
-        }
-      });
-    });
-  });
 
   // Initialize hover effects for project cards
   initProjectHoverEffects();
